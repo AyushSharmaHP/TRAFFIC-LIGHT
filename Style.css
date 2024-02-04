@@ -1,0 +1,64 @@
+body {
+    background-color: black;
+}
+
+#traffic-light {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 600px; /* Adjust the height as needed */
+}
+
+.light {
+    height: 100px;
+    width: 100px;
+    background-color: black;
+    border-radius: 50%;
+    margin: 10px 0; /* Adjust the margin as needed */
+}
+
+#one {
+    animation: redlight 3s ease-in-out infinite;
+}
+
+#two {
+    animation: yellowlight 3s ease-in-out infinite;
+}
+
+#three {
+    animation: greenlight 3s ease-in-out infinite;
+}
+
+#message {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 1s ease-in-out;
+}
+
+@keyframes redlight {
+    0%, 100% { background-color: red; }
+    50% { background-color: black; }
+}
+
+@keyframes yellowlight {
+    0%, 100% { background-color: yellow; }
+    50% { background-color: black; }
+}
+
+@keyframes greenlight {
+    0%, 100% { background-color: green; }
+    50% { background-color: black; }
+}
+
+#three:after {
+    content: "";
+    display: block;
+    animation: showText 1s ease-in-out 9s forwards;
+}
+
+@keyframes showText {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
